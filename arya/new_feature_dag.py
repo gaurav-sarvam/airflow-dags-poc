@@ -16,6 +16,7 @@ def arya_new_feature():
         print(
             "This Dag line appeared which is made to check changes are picked up or not!!"
         )
+        print("TEsting the poc for arya")
         return "magic"
 
     do_something()
