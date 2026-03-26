@@ -18,7 +18,7 @@ def arya_custom_image_test():
                     containers=[
                         k8s.V1Container(
                             name="base",
-                            image="airflow-arya:1.0.0",
+                            image="airflow-arya:1.0.1",
                             image_pull_policy="Never",
                         )
                     ]
@@ -26,12 +26,11 @@ def arya_custom_image_test():
             )
         }
     )
-    def use_numpy():
-        import numpy as np
-        arr = np.array([1, 2, 3, 4, 5])
-        print(f"Arya image works! numpy sum = {arr.sum()}")
-        return int(arr.sum())
+    def use_librosa():
+        import librosa
+        print(f"Arya image works! librosa version = {librosa.__version__}")
+        return "success"
 
-    use_numpy()
+    use_librosa()
 
 arya_custom_image_test()

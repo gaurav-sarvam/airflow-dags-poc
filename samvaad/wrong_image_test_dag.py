@@ -26,10 +26,10 @@ def samvaad_wrong_image_test():
             )
         }
     )
-    def try_numpy_on_wrong_image():
-        import numpy as np  # This should FAIL — numpy not in samvaad image
-        print(f"This should never print: {np.array([1]).sum()}")
+    def try_package_on_wrong_image():
+        import librosa  # Only in arya image, NOT in samvaad
+        print(f"This should never print: {librosa.__version__}")
 
-    try_numpy_on_wrong_image()
+    try_package_on_wrong_image()
 
 samvaad_wrong_image_test()
